@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConnectBPO — Smarter Business Processes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://faq-chatbot-api-production-e7a1.up.railway.app/static/css/widget.css">
     <style>
         /* ── Reset & Base ── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         :root {
-            --c-bg:      #f5f4ff;
+            --c-bg: #f5f4ff;
             --c-surface: #ffffff;
-            --c-ink:     #16133a;
-            --c-muted:   #6e6a8a;
+            --c-ink: #16133a;
+            --c-muted: #6e6a8a;
             --c-accent1: #6366f1;
             --c-accent2: #8b5cf6;
             --c-accent3: #ec4899;
-            --c-lime:    #a3e635;
+            --c-lime: #a3e635;
             --grad: linear-gradient(135deg, #6366f1 0%, #8b5cf6 55%, #ec4899 100%);
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -38,10 +49,10 @@
             position: sticky;
             top: 0;
             z-index: 900;
-            background: rgba(245,244,255,0.85);
+            background: rgba(245, 244, 255, 0.85);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(99,102,241,0.1);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -74,7 +85,9 @@
             transition: color 0.18s;
         }
 
-        .nav-links a:hover { color: var(--c-accent1); }
+        .nav-links a:hover {
+            color: var(--c-accent1);
+        }
 
         .nav-cta {
             padding: 8px 22px;
@@ -83,13 +96,13 @@
             border-radius: 24px;
             font-weight: 600 !important;
             font-size: 13.5px !important;
-            box-shadow: 0 4px 14px rgba(99,102,241,0.35);
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
             transition: transform 0.15s, box-shadow 0.15s !important;
         }
 
         .nav-cta:hover {
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(99,102,241,0.45) !important;
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45) !important;
             color: white !important;
         }
 
@@ -112,18 +125,44 @@
             opacity: 0.22;
             pointer-events: none;
         }
-        .blob1 { width: 520px; height: 520px; background: #6366f1; top: -140px; left: -120px; }
-        .blob2 { width: 420px; height: 420px; background: #ec4899; bottom: -100px; right: -80px; }
-        .blob3 { width: 300px; height: 300px; background: #8b5cf6; top: 50%; left: 50%; transform: translate(-50%,-50%); }
 
-        .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+        .blob1 {
+            width: 520px;
+            height: 520px;
+            background: #6366f1;
+            top: -140px;
+            left: -120px;
+        }
+
+        .blob2 {
+            width: 420px;
+            height: 420px;
+            background: #ec4899;
+            bottom: -100px;
+            right: -80px;
+        }
+
+        .blob3 {
+            width: 300px;
+            height: 300px;
+            background: #8b5cf6;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+        }
 
         .hero-tag {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(99,102,241,0.1);
-            border: 1px solid rgba(99,102,241,0.25);
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.25);
             border-radius: 24px;
             padding: 5px 14px;
             font-size: 12.5px;
@@ -135,13 +174,24 @@
         }
 
         .live-dot {
-            width: 7px; height: 7px;
+            width: 7px;
+            height: 7px;
             background: #4ade80;
             border-radius: 50%;
             animation: blink 2s ease-in-out infinite;
         }
 
-        @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.25;
+            }
+        }
 
         .hero h1 {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -182,10 +232,14 @@
             font-weight: 600;
             font-size: 15px;
             text-decoration: none;
-            box-shadow: 0 6px 22px rgba(99,102,241,0.38);
+            box-shadow: 0 6px 22px rgba(99, 102, 241, 0.38);
             transition: transform 0.15s, box-shadow 0.15s;
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(99,102,241,0.48); }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(99, 102, 241, 0.48);
+        }
 
         .btn-ghost {
             padding: 13px 30px;
@@ -195,10 +249,14 @@
             font-weight: 600;
             font-size: 15px;
             text-decoration: none;
-            border: 1.5px solid rgba(99,102,241,0.2);
+            border: 1.5px solid rgba(99, 102, 241, 0.2);
             transition: border-color 0.18s, background 0.18s;
         }
-        .btn-ghost:hover { border-color: var(--c-accent1); background: rgba(99,102,241,0.04); }
+
+        .btn-ghost:hover {
+            border-color: var(--c-accent1);
+            background: rgba(99, 102, 241, 0.04);
+        }
 
         .hero-stats {
             display: flex;
@@ -208,7 +266,10 @@
             flex-wrap: wrap;
         }
 
-        .stat { text-align: center; }
+        .stat {
+            text-align: center;
+        }
+
         .stat-num {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 30px;
@@ -218,10 +279,18 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .stat-label { font-size: 12.5px; color: var(--c-muted); font-weight: 500; margin-top: 2px; }
+
+        .stat-label {
+            font-size: 12.5px;
+            color: var(--c-muted);
+            font-weight: 500;
+            margin-top: 2px;
+        }
 
         /* ── SECTION SHARED ── */
-        section { padding: 90px 6%; }
+        section {
+            padding: 90px 6%;
+        }
 
         .section-tag {
             font-size: 12px;
@@ -261,7 +330,7 @@
             background: white;
             border-radius: 18px;
             padding: 28px 26px;
-            border: 1.5px solid rgba(99,102,241,0.08);
+            border: 1.5px solid rgba(99, 102, 241, 0.08);
             transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
             position: relative;
             overflow: hidden;
@@ -279,16 +348,19 @@
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(99,102,241,0.14);
-            border-color: rgba(99,102,241,0.25);
+            box-shadow: 0 16px 40px rgba(99, 102, 241, 0.14);
+            border-color: rgba(99, 102, 241, 0.25);
         }
 
-        .service-card:hover::after { opacity: 0.03; }
+        .service-card:hover::after {
+            opacity: 0.03;
+        }
 
         .service-icon {
-            width: 48px; height: 48px;
+            width: 48px;
+            height: 48px;
             border-radius: 14px;
-            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.12));
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.12));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -310,7 +382,9 @@
         }
 
         /* ── WHY US / FEATURES ── */
-        #features { background: white; }
+        #features {
+            background: white;
+        }
 
         .features-layout {
             display: grid;
@@ -319,7 +393,11 @@
             align-items: center;
         }
 
-        .feature-list { display: flex; flex-direction: column; gap: 26px; }
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
 
         .feature-item {
             display: flex;
@@ -328,7 +406,8 @@
 
         .feature-num {
             flex-shrink: 0;
-            width: 36px; height: 36px;
+            width: 36px;
+            height: 36px;
             border-radius: 10px;
             background: var(--grad);
             color: white;
@@ -344,34 +423,56 @@
             font-size: 15px;
             margin-bottom: 4px;
         }
-        .feature-item p { font-size: 13.5px; color: var(--c-muted); }
+
+        .feature-item p {
+            font-size: 13.5px;
+            color: var(--c-muted);
+        }
 
         .features-visual {
             border-radius: 22px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(99,102,241,0.15);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15);
             background: var(--grad);
             padding: 36px;
             color: white;
         }
 
         .visual-card {
-            background: rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.12);
             border-radius: 14px;
             padding: 18px 20px;
             margin-bottom: 14px;
             backdrop-filter: blur(8px);
         }
 
-        .visual-card:last-child { margin-bottom: 0; }
+        .visual-card:last-child {
+            margin-bottom: 0;
+        }
 
-        .visual-card-label { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-        .visual-card-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 26px; font-weight: 800; }
-        .visual-card-sub   { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+        .visual-card-label {
+            font-size: 11px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 4px;
+        }
+
+        .visual-card-value {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        .visual-card-sub {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
 
         .visual-bar {
             height: 6px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 3px;
             margin-top: 10px;
             overflow: hidden;
@@ -384,7 +485,11 @@
             animation: bar-grow 1.4s ease-out forwards;
         }
 
-        @keyframes bar-grow { from {width:0;} }
+        @keyframes bar-grow {
+            from {
+                width: 0;
+            }
+        }
 
         /* ── INDUSTRIES ── */
         .industries-chips {
@@ -400,7 +505,7 @@
             font-size: 13.5px;
             font-weight: 600;
             background: white;
-            border: 1.5px solid rgba(99,102,241,0.15);
+            border: 1.5px solid rgba(99, 102, 241, 0.15);
             color: var(--c-ink);
             cursor: default;
             transition: all 0.18s;
@@ -411,14 +516,22 @@
             color: white;
             border-color: transparent;
             transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(99,102,241,0.3);
+            box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
         }
 
         /* ── TESTIMONIALS ── */
-        #testimonials { background: var(--c-ink); color: white; }
+        #testimonials {
+            background: var(--c-ink);
+            color: white;
+        }
 
-        #testimonials .section-title { color: white; }
-        #testimonials .section-body  { color: rgba(255,255,255,0.6); }
+        #testimonials .section-title {
+            color: white;
+        }
+
+        #testimonials .section-body {
+            color: rgba(255, 255, 255, 0.6);
+        }
 
         .testimonials-grid {
             display: grid;
@@ -428,19 +541,21 @@
         }
 
         .testimonial-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 18px;
             padding: 28px;
             transition: background 0.2s;
         }
 
-        .testimonial-card:hover { background: rgba(255,255,255,0.08); }
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
 
         .testimonial-quote {
             font-size: 14px;
             line-height: 1.65;
-            color: rgba(255,255,255,0.82);
+            color: rgba(255, 255, 255, 0.82);
             margin-bottom: 22px;
         }
 
@@ -451,7 +566,8 @@
         }
 
         .avatar {
-            width: 38px; height: 38px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: var(--grad);
             display: flex;
@@ -463,8 +579,16 @@
             flex-shrink: 0;
         }
 
-        .author-name { font-weight: 600; font-size: 13.5px; }
-        .author-role { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 1px; }
+        .author-name {
+            font-weight: 600;
+            font-size: 13.5px;
+        }
+
+        .author-role {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 1px;
+        }
 
         /* ── CTA STRIP ── */
         .cta-strip {
@@ -482,7 +606,11 @@
             margin-bottom: 14px;
         }
 
-        .cta-strip p { font-size: 16px; opacity: 0.85; margin-bottom: 32px; }
+        .cta-strip p {
+            font-size: 16px;
+            opacity: 0.85;
+            margin-bottom: 32px;
+        }
 
         .btn-white {
             padding: 13px 32px;
@@ -494,15 +622,18 @@
             text-decoration: none;
             display: inline-block;
             transition: transform 0.15s, box-shadow 0.15s;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+        }
 
         /* ── FOOTER ── */
         footer {
             background: #0d0b22;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             padding: 40px 6%;
             display: flex;
             justify-content: space-between;
@@ -521,12 +652,14 @@
             background-clip: text;
         }
 
-        footer p { font-size: 13px; }
+        footer p {
+            font-size: 13px;
+        }
 
         /* ── DEMO BADGE (visible only on /demo) ── */
         .demo-notice {
-            background: rgba(99,102,241,0.08);
-            border: 1px dashed rgba(99,102,241,0.35);
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px dashed rgba(99, 102, 241, 0.35);
             border-radius: 10px;
             padding: 10px 18px;
             font-size: 13px;
@@ -541,19 +674,30 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .features-layout { grid-template-columns: 1fr; }
-            .features-visual { display: none; }
-            .nav-links { display: none; }
+            .features-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .features-visual {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- ── DEMO NOTICE BAR ── -->
-    <div style="background:#6366f1; color:white; text-align:center; font-size:13px; padding:7px; font-weight:500; letter-spacing:0.01em;">
+    <div
+        style="background:#6366f1; color:white; text-align:center; font-size:13px; padding:7px; font-weight:500; letter-spacing:0.01em;">
         🧪 Demo page — Chat widget is live and connected to the backend. Try asking a question!
         &nbsp;|&nbsp;
-        <a href="https://faq-chatbot-api-production-e7a1.up.railway.app/" style="color:#c7d2fe; text-decoration:underline;">Go to Dashboard →</a>
+        <a href="https://faq-chatbot-api-production-e7a1.up.railway.app/"
+            style="color:#c7d2fe; text-decoration:underline;">Go to Dashboard →</a>
     </div>
 
     <!-- ── NAV ── -->
@@ -579,16 +723,29 @@
                 AI-Powered Support Available 24/7
             </div>
             <h1>Business Processes,<br><em>Brilliantly Handled.</em></h1>
-            <p>ConnectBPO streamlines your customer support, back-office operations, and data workflows — so your team can focus on what actually grows the business.</p>
+            <p>ConnectBPO streamlines your customer support, back-office operations, and data workflows — so your team
+                can focus on what actually grows the business.</p>
             <div class="hero-btns">
                 <a href="#services" class="btn-primary">Explore Services</a>
                 <a href="#features" class="btn-ghost">See How It Works</a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Client Satisfaction</div></div>
-                <div class="stat"><div class="stat-num">3 min</div><div class="stat-label">Avg. Response Time</div></div>
-                <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Enterprise Clients</div></div>
-                <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support Coverage</div></div>
+                <div class="stat">
+                    <div class="stat-num">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">3 min</div>
+                    <div class="stat-label">Avg. Response Time</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">200+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">24/7</div>
+                    <div class="stat-label">Support Coverage</div>
+                </div>
             </div>
         </div>
     </section>
@@ -597,38 +754,45 @@
     <section id="services">
         <div class="section-tag">What We Do</div>
         <div class="section-title">End-to-end BPO services that scale with you</div>
-        <div class="section-body">From customer contact centres to intelligent automation, we cover every layer of your operations with dedicated teams and technology.</div>
+        <div class="section-body">From customer contact centres to intelligent automation, we cover every layer of your
+            operations with dedicated teams and technology.</div>
 
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🎯</div>
                 <h3>Customer Support</h3>
-                <p>Omnichannel support across voice, email, chat, and social. Trained agents backed by AI triage for faster first-contact resolution.</p>
+                <p>Omnichannel support across voice, email, chat, and social. Trained agents backed by AI triage for
+                    faster first-contact resolution.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">⚙️</div>
                 <h3>Back-Office Processing</h3>
-                <p>Data entry, document verification, invoice processing and reconciliation handled accurately and at scale.</p>
+                <p>Data entry, document verification, invoice processing and reconciliation handled accurately and at
+                    scale.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🤖</div>
                 <h3>AI Chatbot Integration</h3>
-                <p>Deploy intelligent FAQ bots on your website in minutes. Reduce ticket volume by up to 60% from day one.</p>
+                <p>Deploy intelligent FAQ bots on your website in minutes. Reduce ticket volume by up to 60% from day
+                    one.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">📊</div>
                 <h3>Analytics & Reporting</h3>
-                <p>Real-time dashboards on agent performance, query trends, and customer sentiment to keep leadership informed.</p>
+                <p>Real-time dashboards on agent performance, query trends, and customer sentiment to keep leadership
+                    informed.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔒</div>
                 <h3>Compliance & QA</h3>
-                <p>ISO-aligned quality frameworks and regular audits ensure every interaction meets your regulatory obligations.</p>
+                <p>ISO-aligned quality frameworks and regular audits ensure every interaction meets your regulatory
+                    obligations.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🌏</div>
                 <h3>Multilingual Teams</h3>
-                <p>Support your global customers in 14+ languages with native-speaker agents across multiple time zones.</p>
+                <p>Support your global customers in 14+ languages with native-speaker agents across multiple time zones.
+                </p>
             </div>
         </div>
     </section>
@@ -639,59 +803,72 @@
             <div>
                 <div class="section-tag">Why ConnectBPO</div>
                 <div class="section-title">Built for outcomes, not just outputs</div>
-                <div class="section-body">We don't measure success by hours logged. We measure by tickets resolved, costs reduced, and customers retained.</div>
+                <div class="section-body">We don't measure success by hours logged. We measure by tickets resolved,
+                    costs reduced, and customers retained.</div>
 
                 <div class="feature-list">
                     <div class="feature-item">
                         <div class="feature-num">01</div>
                         <div>
                             <h4>Onboard in 72 hours</h4>
-                            <p>Dedicated implementation team gets your workflows live in days, not months. No lengthy procurement cycles.</p>
+                            <p>Dedicated implementation team gets your workflows live in days, not months. No lengthy
+                                procurement cycles.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-num">02</div>
                         <div>
                             <h4>Transparent SLAs</h4>
-                            <p>Fixed first-response and resolution targets written into every contract with automatic credit for any miss.</p>
+                            <p>Fixed first-response and resolution targets written into every contract with automatic
+                                credit for any miss.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-num">03</div>
                         <div>
                             <h4>Elastic capacity</h4>
-                            <p>Scale headcount up or down within 48 hours to match seasonal peaks without carrying excess staff costs.</p>
+                            <p>Scale headcount up or down within 48 hours to match seasonal peaks without carrying
+                                excess staff costs.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-num">04</div>
                         <div>
                             <h4>Dedicated account team</h4>
-                            <p>A single point of contact, weekly reviews, and a shared Slack channel — you always know what's happening.</p>
+                            <p>A single point of contact, weekly reviews, and a shared Slack channel — you always know
+                                what's happening.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="features-visual">
-                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:18px; font-weight:800; margin-bottom:20px; opacity:0.9;">This week at a glance</div>
+                <div
+                    style="font-family:'Plus Jakarta Sans',sans-serif; font-size:18px; font-weight:800; margin-bottom:20px; opacity:0.9;">
+                    This week at a glance</div>
                 <div class="visual-card">
                     <div class="visual-card-label">Tickets Resolved</div>
                     <div class="visual-card-value">4,821</div>
                     <div class="visual-card-sub">↑ 12% vs last week</div>
-                    <div class="visual-bar"><div class="visual-bar-fill" style="width:87%"></div></div>
+                    <div class="visual-bar">
+                        <div class="visual-bar-fill" style="width:87%"></div>
+                    </div>
                 </div>
                 <div class="visual-card">
                     <div class="visual-card-label">Avg. Handle Time</div>
                     <div class="visual-card-value">3m 14s</div>
                     <div class="visual-card-sub">↓ 8% improvement</div>
-                    <div class="visual-bar"><div class="visual-bar-fill" style="width:68%"></div></div>
+                    <div class="visual-bar">
+                        <div class="visual-bar-fill" style="width:68%"></div>
+                    </div>
                 </div>
                 <div class="visual-card">
                     <div class="visual-card-label">CSAT Score</div>
                     <div class="visual-card-value">96.4%</div>
                     <div class="visual-card-sub">Above 95% target ✓</div>
-                    <div class="visual-bar"><div class="visual-bar-fill" style="width:96%"></div></div>
+                    <div class="visual-bar">
+                        <div class="visual-bar-fill" style="width:96%"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -701,7 +878,8 @@
     <section id="industries">
         <div class="section-tag">Industries</div>
         <div class="section-title">Trusted across every sector</div>
-        <div class="section-body">Whether you're in fintech or fast-food, we've built and run operations in your vertical before.</div>
+        <div class="section-body">Whether you're in fintech or fast-food, we've built and run operations in your
+            vertical before.</div>
 
         <div class="industries-chips">
             <span class="chip">🏦 Financial Services</span>
@@ -721,11 +899,13 @@
     <section id="testimonials">
         <div class="section-tag" style="color:#a78bfa;">What clients say</div>
         <div class="section-title">Results our clients talk about</div>
-        <div class="section-body">Don't take our word for it — here's what operations leaders across Sri Lanka and the region have to say.</div>
+        <div class="section-body">Don't take our word for it — here's what operations leaders across Sri Lanka and the
+            region have to say.</div>
 
         <div class="testimonials-grid">
             <div class="testimonial-card">
-                <div class="testimonial-quote">"ConnectBPO cut our average response time from 9 hours to under 20 minutes. The AI chatbot alone deflects 55% of our tier-1 tickets. Genuinely impressed."</div>
+                <div class="testimonial-quote">"ConnectBPO cut our average response time from 9 hours to under 20
+                    minutes. The AI chatbot alone deflects 55% of our tier-1 tickets. Genuinely impressed."</div>
                 <div class="testimonial-author">
                     <div class="avatar">RW</div>
                     <div>
@@ -735,7 +915,8 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-quote">"We went live in four days. No IT involvement on our end whatsoever. The onboarding team handled everything and we started seeing deflection metrics from day one."</div>
+                <div class="testimonial-quote">"We went live in four days. No IT involvement on our end whatsoever. The
+                    onboarding team handled everything and we started seeing deflection metrics from day one."</div>
                 <div class="testimonial-author">
                     <div class="avatar">AN</div>
                     <div>
@@ -745,7 +926,9 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-quote">"The multilingual team was a game-changer for our regional expansion. Support in Sinhala, Tamil, and English — handled seamlessly with the same CSAT we'd expect from English-only ops."</div>
+                <div class="testimonial-quote">"The multilingual team was a game-changer for our regional expansion.
+                    Support in Sinhala, Tamil, and English — handled seamlessly with the same CSAT we'd expect from
+                    English-only ops."</div>
                 <div class="testimonial-author">
                     <div class="avatar">KF</div>
                     <div>
@@ -800,8 +983,9 @@
 
     <script>
         // Override API_URL before widget.js loads
-        window.__WIDGET_COMPANY__ = 'cospaces';
+        window.__WIDGET_COMPANY__ = 'connect_bpo';
     </script>
     <script src="https://faq-chatbot-api-production-e7a1.up.railway.app/static/js/widget.js"></script>
 </body>
+
 </html>
